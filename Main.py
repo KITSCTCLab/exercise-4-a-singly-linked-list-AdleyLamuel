@@ -1,11 +1,21 @@
 from typing import Optional
+
 class Node:
+
     def __init__(self, data=None, next=None):
+        """
+        Initialises the Node with given attributes
+        """
         self.data = data
-        self.next = next()
-       
+        self.next = next
+
+
 class LinkedList:
+
     def __init__(self):
+        """
+        Initialize the head
+        """
         self.head = None
 
     def insert_at_end(self, data):
@@ -26,6 +36,7 @@ class LinkedList:
             current = current.next
         print(elements)
 
+
 class Solution:
 
     def addTwoNumbers(self, first_list: Optional[LinkedList], second_list: Optional[LinkedList]) -> Optional[LinkedList]:
@@ -45,14 +56,23 @@ class Solution:
             curr = curr.next
         return int(num)
 
+
 first_list = LinkedList()
+
 second_list = LinkedList()
+
 data_for_first_list = list(map(int, input().strip().split(" ")))
+
 for data in data_for_first_list:
     first_list.insert_at_end(data)
+
 data_for_second_list = list(map(int, input().strip().split(" ")))
+
 for data in data_for_second_list:
     second_list.insert_at_end(data)
+
 solution = Solution()
+
 new_list = solution.addTwoNumbers(first_list, second_list)
+
 new_list.status()
